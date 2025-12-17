@@ -23,8 +23,8 @@ app.listen(PORT, () => {
 const app = (0, express_1.default)();
 app.use(cors());
 mongoose.connect(process.env.MONGODB_URI);
-moongoose.then(() => console.log("MongoDB Connected Successfully"))
-moongoose.catch(err => console.log("MongoDB Error:", err));
+mongoose.then(() => console.log("MongoDB Connected Successfully"))
+mongoose.catch(err => console.log("MongoDB Error:", err));
 app.use(express_1.default.json());
 app.use("/api/v1/auth", auth_route_1.default);
 app.use("/api/v1/content", content_route_1.default);
