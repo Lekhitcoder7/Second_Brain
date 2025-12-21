@@ -13,9 +13,7 @@ const content_route_1 = __importDefault(require("./Routes/content.route"));
 const brain_route_1 = __importDefault(require("./Routes/brain.route"));
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+
 
 
 
@@ -24,6 +22,9 @@ const app = (0, express_1.default)();
 app.use(cors());
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.then(() => console.log("MongoDB Connected Successfully"))
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 mongoose.catch(err => console.log("MongoDB Error:", err));
 app.use(express_1.default.json());
 app.use("/api/v1/auth", auth_route_1.default);
