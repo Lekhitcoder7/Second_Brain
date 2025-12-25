@@ -7,6 +7,10 @@ import authRouter from './Routes/auth.route';
 import contentRouter  from './Routes/content.route';
 import brain from './Routes/brain.route';
 const app = express();
+app.get("/", (req, res) => {
+  res.send("Backend is live 🚀");
+});
+
 app.use(cors());
 mongoose.connect(process.env.MONGODB_URI)
 app.use(express.json());

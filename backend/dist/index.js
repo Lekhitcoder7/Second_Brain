@@ -12,6 +12,9 @@ const auth_route_1 = __importDefault(require("./Routes/auth.route"));
 const content_route_1 = __importDefault(require("./Routes/content.route"));
 const brain_route_1 = __importDefault(require("./Routes/brain.route"));
 const app = (0, express_1.default)();
+app.get("/", (req, res) => {
+    res.send("Backend is live 🚀");
+});
 app.use(cors());
 mongoose.connect(process.env.MONGODB_URI);
 app.use(express_1.default.json());
