@@ -18,5 +18,4 @@ router.get("/", auth_1.auth, (req, res) => {
 router.post("/", auth_1.auth, content_controller_1.addContent);
 router.delete("/", auth_1.auth, content_controller_1.deleteContent);
 router.post("/:type", auth_1.auth, content_controller_1.getByType);
-// router.post("/:searchParam", auth);
 exports.default = router;
